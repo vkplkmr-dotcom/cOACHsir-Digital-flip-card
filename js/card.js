@@ -101,15 +101,13 @@ window.location.origin +
 window.location.pathname +
 "?id=" + data.studentId;
 
+document.getElementById("qrCode").innerHTML = "";
 
-new QRCode(
-document.getElementById("qrCode"),
-{
+new QRCode(document.getElementById("qrCode"), {
     text: cardURL,
-    width:60,
-    height:60
+    width: 120,
+    height: 120
 });
-
 photo.onerror = function(){
 
     console.log("PHOTO ERROR");
