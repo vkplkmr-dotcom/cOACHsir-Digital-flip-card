@@ -163,7 +163,9 @@ object-fit:cover;
 border-radius:12px;
 
 border:3px solid #ffd700;
+outline:2px solid rgba(255,255,255,.35);
 
+filter:drop-shadow(0 0 10px gold);
 box-shadow:
 0 0 15px #ffd700;
 
@@ -356,5 +358,66 @@ transform:scale(1.05);
 
 box-shadow:
 0 0 25px #ffd700;
+
+}
+/* ========================= */
+/* PREMIUM GLOW ANIMATION */
+/* ========================= */
+
+.card-side{
+
+    position:relative;
+
+}
+
+.card-side::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:18px;
+
+    padding:2px;
+
+    background:linear-gradient(
+        45deg,
+        #00e5ff,
+        #ffd700,
+        #00ff88,
+        #00e5ff
+    );
+
+    background-size:300% 300%;
+
+    animation:borderGlow 5s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    pointer-events:none;
+
+}
+
+@keyframes borderGlow{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
 
 }
