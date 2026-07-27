@@ -110,22 +110,20 @@ photo.onerror = function(){
 
 
 
-            if(data.paymentStatus === "approved"){
+           if(data.paymentStatus === "approved"){
 
+    status.innerHTML = "🟢 ACTIVE";
 
-                status.innerHTML = "🟢 ACTIVE";
+    document.getElementById("examBtn").style.display = "inline-block";
 
+}
+else{
 
-            }
+    status.innerHTML = "🟡 PAYMENT PENDING";
 
-            else{
+    document.getElementById("examBtn").style.display = "none";
 
-
-                status.innerHTML = "🟡 PAYMENT PENDING";
-
-
-            }
-
+}
 
 
         }
@@ -157,3 +155,11 @@ photo.onerror = function(){
 
 
 loadStudent();
+function openExam(){
+
+    window.open(
+    "https://cbtexam.onlinetestpanel.com",
+    "_blank"
+    );
+
+}
