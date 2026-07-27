@@ -10,24 +10,23 @@ body{
 
     min-height:100vh;
     background:
-    radial-gradient(circle at top,#123a70,#020617);
+    radial-gradient(circle at top,#0f3b73,#020617);
 
     display:flex;
     justify-content:center;
     align-items:center;
-
     flex-direction:column;
+
 }
 
 
 
-/* CARD SIZE 86x54 mm LANDSCAPE */
+/* 86x54 mm CARD */
 
 .card-wrapper{
 
     width:86mm;
     height:54mm;
-
     perspective:1200px;
 
 }
@@ -49,7 +48,6 @@ body{
 
 
 
-
 .card-side{
 
     position:absolute;
@@ -57,47 +55,40 @@ body{
     width:100%;
     height:100%;
 
-    border-radius:15px;
+    padding:10px;
 
-    backface-visibility:hidden;
+    border-radius:18px;
 
     overflow:hidden;
 
-
-    padding:12px;
-
-
     color:white;
 
+    backface-visibility:hidden;
 
-    border:2px solid rgba(255,255,255,0.4);
+
+    border:2px solid rgba(255,215,0,0.6);
 
 
     box-shadow:
-    0 0 20px #00c6ff,
+    0 0 25px #00c6ff,
     inset 0 0 20px rgba(255,255,255,0.15);
-
-
 
 }
 
 
 
-
 /* FRONT */
-
 
 .front{
 
-    background:
+background:
 
-    linear-gradient(
-    135deg,
-    #021b35,
-    #005bea,
-    #00c6fb
-    );
-
+linear-gradient(
+135deg,
+#001b36,
+#004e92,
+#00c6fb
+);
 
 }
 
@@ -105,27 +96,25 @@ body{
 
 /* HEADER */
 
-
 .card-header{
 
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
+display:flex;
+align-items:center;
+gap:8px;
 
 }
 
 
 .logo{
 
-    width:35px;
+width:38px;
+height:38px;
 
-    height:35px;
+border-radius:50%;
 
-    border-radius:50%;
+background:white;
 
-    background:white;
+padding:3px;
 
 }
 
@@ -133,9 +122,8 @@ body{
 
 .card-header h2{
 
-    font-size:12px;
-
-    color:#ffd700;
+font-size:13px;
+color:#ffd700;
 
 }
 
@@ -143,7 +131,7 @@ body{
 
 .card-header p{
 
-    font-size:8px;
+font-size:8px;
 
 }
 
@@ -154,11 +142,11 @@ body{
 
 .student-area{
 
-    display:flex;
+display:flex;
 
-    margin-top:10px;
+gap:10px;
 
-    gap:10px;
+margin-top:8px;
 
 }
 
@@ -166,15 +154,19 @@ body{
 
 .student-photo{
 
-    width:70px;
+width:65px;
+height:75px;
 
-    height:85px;
+object-fit:cover;
 
-    object-fit:cover;
+border-radius:10px;
 
-    border-radius:8px;
+border:3px solid #ffd700;
 
-    border:2px solid gold;
+
+box-shadow:
+
+0 0 12px #ffd700;
 
 }
 
@@ -182,9 +174,9 @@ body{
 
 .student-info h3{
 
-    font-size:14px;
+font-size:14px;
 
-    margin-bottom:5px;
+color:white;
 
 }
 
@@ -192,165 +184,138 @@ body{
 
 .student-info p{
 
-    font-size:9px;
+font-size:9px;
 
-    margin:4px 0;
-
-}
-
-
-
-/* STATUS */
-
-
-.status{
-
-    position:absolute;
-
-    bottom:10px;
-
-    right:12px;
-
+margin-top:4px;
 
 }
 
+
+
+/* ACTIVE */
 
 
 .status span{
 
+background:#00ff88;
 
-    background:#00ff88;
+color:#003b20;
 
-    color:#003b20;
+padding:4px 12px;
 
-    padding:5px 10px;
+border-radius:20px;
 
-    border-radius:20px;
+font-size:9px;
 
-    font-size:9px;
-
-    font-weight:bold;
+font-weight:bold;
 
 }
 
 
 
-/* BACK SIDE */
+/* BACK */
 
 
 .back{
 
+background:
 
-    background:
-
-    linear-gradient(
-    135deg,
-    #111827,
-    #1d4ed8
-    );
+linear-gradient(
+135deg,
+#020617,
+#1e40af
+);
 
 
-    transform:rotateY(180deg);
-
+transform:rotateY(180deg);
 
 }
-
 
 
 .back h2{
 
-    color:#ffd700;
+color:#ffd700;
 
-    font-size:14px;
-
-}
-
-
-
-.back h3{
-
-    font-size:11px;
-
-    margin-top:8px;
+font-size:15px;
 
 }
-
 
 
 .back ul{
 
-    margin-top:8px;
+margin-top:10px;
 
-    font-size:9px;
+font-size:9px;
 
-    line-height:15px;
+line-height:15px;
 
 }
 
+
+
+/* QR */
 
 
 .qr-box{
 
-    position:absolute;
+width:60px;
+height:60px;
 
-    right:15px;
+background:white;
 
-    bottom:12px;
+position:absolute;
 
+right:12px;
+bottom:10px;
 
-    width:55px;
+display:flex;
 
-    height:55px;
+align-items:center;
+justify-content:center;
 
+color:black;
 
-    background:white;
-
-    color:black;
-
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:8px;
-
+font-size:8px;
 
 }
 
 
 
-/* BUTTONS */
-
+/* BUTTON */
 
 .buttons{
 
-    margin-top:25px;
+margin-top:25px;
 
 }
 
 
 button{
 
+padding:10px 25px;
 
-    padding:10px 25px;
+border:none;
 
-    margin:5px;
+border-radius:25px;
 
-    border:none;
-
-    border-radius:20px;
-
-
-    background:#ffd700;
-
-    color:#001b36;
+margin:5px;
 
 
-    font-weight:bold;
+background:
 
-    cursor:pointer;
+linear-gradient(
+90deg,
+#ffd700,
+#ffb300
+);
 
+
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:
+
+0 0 15px #ffd700;
 
 }
