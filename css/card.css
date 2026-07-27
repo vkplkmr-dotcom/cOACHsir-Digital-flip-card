@@ -155,21 +155,21 @@ margin-top:8px;
 .student-photo{
 
 width:65px;
+
 height:75px;
 
 object-fit:cover;
 
-border-radius:10px;
+border-radius:12px;
 
 border:3px solid #ffd700;
 
-
 box-shadow:
+0 0 15px #ffd700;
 
-0 0 12px #ffd700;
+background:white;
 
 }
-
 
 
 .student-info h3{
@@ -197,11 +197,16 @@ margin-top:4px;
 
 .status span{
 
-background:#00ff88;
+background:
+linear-gradient(
+90deg,
+#00ff88,
+#00c853
+);
 
 color:#003b20;
 
-padding:4px 12px;
+padding:5px 12px;
 
 border-radius:20px;
 
@@ -209,8 +214,10 @@ font-size:9px;
 
 font-weight:bold;
 
-}
+box-shadow:
+0 0 12px #00ff88;
 
+}
 
 
 /* BACK */
@@ -317,5 +324,32 @@ cursor:pointer;
 box-shadow:
 
 0 0 15px #ffd700;
+
+}
+/* CBT EXAM BUTTON */
+
+#examBtn{
+
+    display:none;
+
+    background:
+    linear-gradient(
+    90deg,
+    #00ff88,
+    #00c853
+    );
+
+    color:#003b20;
+
+    box-shadow:
+    0 0 15px #00ff88;
+
+}
+button:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 25px #ffd700;
 
 }
