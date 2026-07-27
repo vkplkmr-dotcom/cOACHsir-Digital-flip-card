@@ -1,88 +1,125 @@
-// COACHsir Digital Flip Card JS
+// COACHsir Digital Flip Card
 
 
 const card = document.getElementById("card");
 
 
-// FRONT BUTTON
+// Flip Buttons
 
 function showFront(){
 
-    card.style.transform = "rotateY(0deg)";
+    card.style.transform="rotateY(0deg)";
 
 }
 
-
-// BACK BUTTON
 
 function showBack(){
 
-    card.style.transform = "rotateY(180deg)";
+    card.style.transform="rotateY(180deg)";
 
 }
 
 
 
+// Get Student ID from URL
 
-// DEMO STUDENT DATA
+const params = new URLSearchParams(window.location.search);
 
-const student = {
-
-    name:"Rahul Sharma",
-
-    id:"S001",
-
-    program:"NEET Biology",
-
-    expiry:"31-03-2027",
-
-    paymentStatus:"approved"
-
-};
+const studentId = params.get("id") || "CSA2026001";
 
 
 
-// LOAD STUDENT DATA
+// Load Student Data
 
-document.getElementById("studentName").innerHTML =
-student.name;
-
-
-document.getElementById("studentId").innerHTML =
-student.id;
+async function loadStudent(){
 
 
-document.getElementById("program").innerHTML =
-student.program;
+    try{
 
 
-document.getElementById("expiry").innerHTML =
-student.expiry;
+        const doc = await db
+        .collection("students")
+        .doc(studentId)
+        .get();
 
 
 
-// PAYMENT STATUS
+        if(doc.exists){
 
 
-const status =
-document.getElementById("paymentStatus");
+            const data = doc.data();
 
 
 
-if(student.paymentStatus==="approved"){
+            document.getElementById("studentName").innerHTML =
+            data.name;
 
 
-    status.innerHTML="🟢 ACTIVE";
+
+            document.getElementById("studentId").innerHTML =
+            data.studentId;
+
+
+
+            document.getElementById("program").innerHTML =
+            data.program;
+
+
+
+            document.getElementById("expiry").innerHTML =
+            data.validTill;
+
+
+
+            document.querySelector(".student-photo").src =
+            data.photoURL;
+
+
+
+            const status =
+            document.getElementById("paymentStatus");
+
+
+
+            if(data.paymentStatus=="approved"){
+
+
+                status.innerHTML="🟢 ACTIVE";
+
+
+            }
+            else{
+
+
+                status.innerHTML="🟡 PAYMENT PENDING";
+
+
+            }
+
+
+
+        }
+
+        else{
+
+
+            alert("Student not found");
+
+
+        }
+
+
+    }
+
+    catch(error){
+
+        console.log(error);
+
+    }
 
 
 }
 
-else{
 
 
-    status.innerHTML="🟡 PAYMENT PENDING";
-
-
-    status.style.background="#ffd700";
-
-}
+loadStudent();
