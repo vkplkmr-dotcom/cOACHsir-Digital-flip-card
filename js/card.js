@@ -105,8 +105,8 @@ document.getElementById("qrCode").innerHTML = "";
 
 new QRCode(document.getElementById("qrCode"), {
     text: cardURL,
-    width: 120,
-    height: 120
+    width: 55,
+    height: 55
 });
 photo.onerror = function(){
 
