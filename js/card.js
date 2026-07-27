@@ -81,9 +81,26 @@ async function loadStudent(){
 
             // Photo
 
-            document.getElementById("studentPhoto").src =
-            data.photoURL;
+            // Photo Test
 
+console.log("PHOTO URL =", data.photoURL);
+
+const photo = document.getElementById("studentPhoto");
+
+photo.src = data.photoURL;
+
+photo.onload = function(){
+
+    console.log("PHOTO LOADED");
+
+};
+
+
+photo.onerror = function(){
+
+    console.log("PHOTO ERROR");
+
+};
 
 
             // Payment Status
