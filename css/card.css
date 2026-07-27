@@ -199,28 +199,33 @@ margin-top:4px;
 
 .status span{
 
-background:
-linear-gradient(
+background:linear-gradient(
 90deg,
 #00ff88,
 #00c853
 );
 
-color:#003b20;
+color:white;
 
-padding:5px 12px;
+padding:6px 14px;
 
-border-radius:20px;
+border-radius:50px;
 
 font-size:9px;
 
-font-weight:bold;
+font-weight:700;
+
+letter-spacing:1px;
+
+text-transform:uppercase;
 
 box-shadow:
-0 0 12px #00ff88;
+0 0 10px rgba(0,255,136,.8),
+0 0 20px rgba(0,255,136,.4);
+
+animation:activePulse 1.8s infinite;
 
 }
-
 
 /* BACK */
 
@@ -419,5 +424,20 @@ box-shadow:
     100%{
         background-position:0% 50%;
     }
+
+}
+@keyframes activePulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
 
 }
