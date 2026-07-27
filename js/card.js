@@ -71,9 +71,7 @@ async function loadStudent(){
 
 
 
-            document.querySelector(".student-photo").src =
-            data.photoURL;
-
+           document.getElementById("studentPhoto").src = data.photoURL;
 
 
             const status =
