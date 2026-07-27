@@ -4,18 +4,18 @@
 const card = document.getElementById("card");
 
 
-// Flip Buttons
+// FRONT / BACK BUTTON
 
 function showFront(){
 
-    card.style.transform="rotateY(0deg)";
+    card.style.transform = "rotateY(0deg)";
 
 }
 
 
 function showBack(){
 
-    card.style.transform="rotateY(180deg)";
+    card.style.transform = "rotateY(180deg)";
 
 }
 
@@ -23,13 +23,14 @@ function showBack(){
 
 // Get Student ID from URL
 
-const params = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(window.location.search);
 
-const studentId = params.get("id") || "CSA2026001";
+const studentId = urlParams.get("id") || "CSA2026001";
 
 
 
-// Load Student Data
+
+// Load Student From Firebase
 
 async function loadStudent(){
 
@@ -50,46 +51,60 @@ async function loadStudent(){
             const data = doc.data();
 
 
+            // Name
 
             document.getElementById("studentName").innerHTML =
             data.name;
 
 
 
+            // ID
+
             document.getElementById("studentId").innerHTML =
             data.studentId;
 
 
+
+            // Program
 
             document.getElementById("program").innerHTML =
             data.program;
 
 
 
+            // Valid Till
+
             document.getElementById("expiry").innerHTML =
             data.validTill;
 
 
 
-           document.getElementById("studentPhoto").src = data.photoURL;
+            // Photo
 
+            document.getElementById("studentPhoto").src =
+            data.photoURL;
+
+
+
+            // Payment Status
 
             const status =
             document.getElementById("paymentStatus");
 
 
 
-            if(data.paymentStatus=="approved"){
+            if(data.paymentStatus === "approved"){
 
 
-                status.innerHTML="🟢 ACTIVE";
+                status.innerHTML = "🟢 ACTIVE";
 
 
             }
+
             else{
 
 
-                status.innerHTML="🟡 PAYMENT PENDING";
+                status.innerHTML = "🟡 PAYMENT PENDING";
 
 
             }
@@ -101,22 +116,26 @@ async function loadStudent(){
         else{
 
 
-            alert("Student not found");
+            console.log("Student not found");
 
 
         }
+
 
 
     }
 
     catch(error){
 
+
         console.log(error);
+
 
     }
 
 
 }
+
 
 
 
