@@ -94,7 +94,21 @@ photo.onload = function(){
     console.log("PHOTO LOADED");
 
 };
+// QR CODE
 
+const cardURL =
+window.location.origin +
+window.location.pathname +
+"?id=" + data.studentId;
+
+
+new QRCode(
+document.getElementById("qrCode"),
+{
+    text: cardURL,
+    width:60,
+    height:60
+});
 
 photo.onerror = function(){
 
