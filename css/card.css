@@ -267,122 +267,131 @@ line-height:15px;
 
 
 
-/* QR */
-
-
-/* PREMIUM QR BOX */
+/* ========================= */
+/* PREMIUM QR */
+/* ========================= */
 
 .qr-box{
 
-width:68px;
-height:68px;
+    position:absolute;
 
-background:#ffffff;
+    right:10px;
+    bottom:10px;
 
-position:absolute;
+    width:58px;
+    height:58px;
 
-right:10px;
-bottom:10px;
+    background:#fff;
 
-display:flex;
+    border:2px solid #ffd700;
 
-align-items:center;
-justify-content:center;
+    border-radius:8px;
 
-border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-border:2px solid #ffd700;
+    overflow:hidden;
 
-padding:3px;
+    box-shadow:
+    0 0 8px rgba(255,215,0,.8);
 
-box-shadow:
-0 0 12px rgba(255,215,0,.8),
-0 0 25px rgba(0,198,255,.5);
+    padding:2px;
+
+}
+
 .qr-label{
 
-position:absolute;
+    position:absolute;
 
-right:8px;
+    right:6px;
 
-bottom:2px;
+    bottom:72px;
 
-font-size:6px;
+    font-size:6px;
 
-font-weight:700;
+    font-weight:700;
 
-color:#ffd700;
+    color:#ffd700;
 
-letter-spacing:1px;
+    letter-spacing:1px;
 
-text-shadow:0 0 6px gold;
+    text-shadow:0 0 5px gold;
 
 }
+
 #qrCode{
 
-width:60px;
-height:60px;
+    width:54px;
+    height:54px;
 
-display:flex;
-
-align-items:center;
-justify-content:center;
-
-background:white;
-
-border-radius:6px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
 }
 
-#qrCode img{
+#qrCode img,
+#qrCode canvas{
 
-width:60px !important;
-height:60px !important;
-
-}
-#qrCode img{
-
-width:60px;
-height:60px;
+    width:54px !important;
+    height:54px !important;
 
 }
-
-
-/* BUTTON */
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
 
 .buttons{
 
-margin-top:25px;
+    margin-top:14px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+    flex-wrap:wrap;
 
 }
 
-
 button{
 
-padding:10px 25px;
+    padding:6px 14px;
 
-border:none;
+    font-size:11px;
 
-border-radius:25px;
+    border:none;
 
-margin:5px;
+    border-radius:18px;
 
+    background:
+    linear-gradient(
+    90deg,
+    #ffd700,
+    #ffb300
+    );
 
-background:
+    color:#001b36;
 
-linear-gradient(
-90deg,
-#ffd700,
-#ffb300
-);
+    font-weight:700;
 
+    cursor:pointer;
 
-font-weight:bold;
+    box-shadow:
+    0 0 12px rgba(255,215,0,.6);
 
-cursor:pointer;
+    transition:.3s;
 
-box-shadow:
+}
 
-0 0 15px #ffd700;
+button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 0 20px #ffd700;
 
 }
 /* CBT EXAM BUTTON */
