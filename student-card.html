@@ -1,1 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>COACHsir Digital Student Card</title>
+
+<link rel="stylesheet" href="css/card.css">
+
+</head>
+
+
+<body>
+
+
+<div class="card-wrapper">
+
+
+<div class="flip-card" id="card">
+
+
+<!-- FRONT SIDE -->
+
+<div class="card-side front">
+
+
+<div class="card-header">
+
+<img src="assets/logo.png" class="logo">
+
+<div>
+<h2>COACHsir Academy</h2>
+<p>CBT EXAM ACCESS CARD</p>
+</div>
+
+</div>
+
+
+<div class="student-area">
+
+
+<img src="assets/student.jpg" 
+class="student-photo">
+
+
+<div class="student-info">
+
+<h3 id="studentName">
+Student Name
+</h3>
+
+
+<p>
+ID :
+<span id="studentId">
+S001
+</span>
+</p>
+
+
+<p>
+Program :
+<span id="program">
+NEET Biology
+</span>
+</p>
+
+
+<p>
+Valid Till :
+<span id="expiry">
+2027
+</span>
+</p>
+
+
+</div>
+
+</div>
+
+
+
+<div class="status">
+
+<span id="paymentStatus">
+🟢 ACTIVE
+</span>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!-- BACK SIDE -->
+
+
+<div class="card-side back">
+
+
+<h2>
+COACHsir Academy
+</h2>
+
+
+<h3>
+Student Guidelines
+</h3>
+
+
+<ul>
+
+<li>Digital Verified Card</li>
+
+<li>CBT Exam Access</li>
+
+<li>Online Classes Access</li>
+
+<li>QR Verification</li>
+
+</ul>
+
+
+
+<div class="qr-box">
+
+QR CODE
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="buttons">
+
+
+<button onclick="showFront()">
+FRONT
+</button>
+
+
+<button onclick="showBack()">
+BACK
+</button>
+
+
+</div>
+
+
+
+<script src="js/card.js"></script>
+
+
+</body>
+
+</html>
